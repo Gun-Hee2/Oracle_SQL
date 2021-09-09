@@ -1,0 +1,11 @@
+SELECT * FROM EMPLOYEES;
+SELECT * FROM COLS WHERE TABLE_NAME = 'EMPLOYEES';
+SELECT employee_id, first_name, salary, job_id FROM EMPLOYEES;
+SELECT first_name, salary, salary + 300 FROM EMPLOYEES;
+SELECT employee_id, first_name, salary, salary + (salary * commission_pct) FROM EMPLOYEES;
+SELECT last_name AS 이름, salary AS 급여 FROM EMPLOYEES;
+SELECT last_name AS NAME, salary * 12 AS "Annual Salary" FROM EMPLOYEES;
+SELECT first_name || job_id FROM EMPLOYEES;
+SELECT first_name || ' is a ' || job_id FROM EMPLOYEES;
+SELECT first_name || ':' || ' ' || '1 Year salary = ' || salary FROM EMPLOYEES;
+SELECT job_id FROM EMPLOYEES;
