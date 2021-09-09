@@ -65,7 +65,7 @@ SELECT REPLACE('AAAAABCD', 'A') FROM DUAL;
 SELECT REPLACE('AAAAABCD', 'A', 'a') FROM DUAL;
 SELECT REPLACE('AAAAABCD', 'AA', 'a') FROM DUAL;
 
--- SURSTR 시작위치 지정후 원하는 위치까지 출력 
+-- SUBSTR 시작위치 지정후 원하는 위치까지 출력 
 SELECT SUBSTR('ABCDE', 3) FROM DUAL;     -- 3번지부터 끝가지
 SELECT SUBSTR('ABCDE', 3, 2) FROM DUAL;  -- 3번지부터 2문자
 
