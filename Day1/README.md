@@ -247,7 +247,7 @@ WHERE hire_date LIKE '%06'; -- 06으로 끝나는 모든 문자를 찾는다
 
 SELECT first_name
 FROM employees
-WHERE first_name LIKE '%h%'; -- -- 06이 포함되는 모든 문자를 찾는다
+WHERE first_name LIKE '%h%'; -- -- h가 포함되는 모든 문자를 찾는다
 ```
 
 
