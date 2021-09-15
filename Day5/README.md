@@ -155,3 +155,84 @@ CREATE TABLE EMP(
 );
 ```
 
+## View(뷰)
+
+### View(뷰)란?
+
+뷰(View)는 하나 이상의 테이블이나 다른 뷰의 데이터를 볼 수 있게 하는 데이터베이스 객체이다.
+
+실제 데이터는 뷰를 구성하는 테이블에 담겨있지만 테이블처럼 사용할 수 있다.
+
+더불어, 테이블 뿐만 아니라 다른 뷰를 참조해서 새로운 뷰를 만들어 사용할 수도 있다.
+
+### View의 사용 목적은?
+
+코딩을 하다보면 여러개의 테이블에서 필요한 정보를 뽑아 사용할 때가 많다.
+
+이때, 뷰를 사용하면 복잡한 질의를 좀 더 편리하고 쉽게 만들어 준다.
+
+여러 테이블의 JOIN과 GROUP BY같은 복잡한 쿼리를 뷰로 저장해놓으면, 그 다음부터는 저장한 뷰의 정보만 가져오면 되므로 좀 더 쉽고 편리하게 사용할 수 있다.
+
+일종의 함수라고 생각하면 쉽게 이해할 수 있다.
+
+또한, 뷰를 보면 컬럼과 데이터만 존재하므로 원천 테이블을  알 수 없어서 데이터 보안에도 유리하다.
+
+### View(뷰)의 사용 예시
+
+* View 생성
+
+```sql
+-- 문법
+CREATE VIEW [뷰 이름] AS
+SELECT절;
+```
+
+```sql
+-- ex)
+CREATE VIEW V_TEST01
+AS
+SELECT job_id, job_title, min_salary
+FROM jobs;
+```
+
+다음과 같이 뷰를 생성하고 뷰를 SELECT하면 만들어둔 뷰의 SELECT문을 실행할 수 있다.
+
+* View 수정
+
+뷰의 수정은 REPLACE이며, CREATE대신 REPLACE를 넣으면 뷰를 수정할 수 있다.
+
+```sql
+-- 문법
+REPLACE VIEW [뷰 이름] AS
+SELECT절;
+```
+
+* View 제한
+
+```sql
+-- ex) 
+CREATE VIEW V_TEST01
+AS
+SELECT department_id, department_name, location_id
+FROM departments
+WITH READ ONLY;
+```
+
+다음과 같이 READ ONLY를 해주면 View의 SELECT절에 해당되는 정보만 볼 수 있고, 수정은(DML)은 불가능하다.
+
+* View 삭제
+
+```sql
+-- 문법
+DROP VIEW [뷰 이름];
+```
+
+```sql
+-- ex)
+DROP VIEW V_TEST01;
+```
+
+View(뷰)를 삭제하는 쿼리는 위와 같다.
+
+뷰는 다른 테이블을 참조만 하고 있기 때문에, 뷰를 삭제하더라도 실제 뷰가 참조하고 있는 테이블의 데이터들은 삭제 되지 않는다.
+
