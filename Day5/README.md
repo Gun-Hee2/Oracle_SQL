@@ -199,11 +199,11 @@ FROM jobs;
 
 * View 수정
 
-뷰의 수정은 REPLACE이며, CREATE대신 REPLACE를 넣으면 뷰를 수정할 수 있다.
+뷰의 수정은 REPLACE이며, CREATE OR REPLACE를 넣으면  생성한 뷰를 수정할 수 있다.
 
 ```sql
 -- 문법
-REPLACE VIEW [뷰 이름] AS
+CREATE OR REPLACE VIEW [뷰 이름] AS
 SELECT절;
 ```
 
